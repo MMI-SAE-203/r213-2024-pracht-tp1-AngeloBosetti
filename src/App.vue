@@ -10,7 +10,7 @@ onErrorCaptured((err, instance, info) => {
 </script>
 
 <template>
-  <header>
+  <header class="bg-stone-300">
     <button
     @pointerdown="menuIsOpen = !menuIsOpen"
     aria-controls="mainNav"
@@ -20,21 +20,21 @@ onErrorCaptured((err, instance, info) => {
     menu
   </button >
     <Transition
-      class="transition-transform duration-1000"
+      class="transition-transform duration-800"
       enter-from-class="-translate-x-full"
       enter-to-class="translate-x-0"
       leave-active-class="-translate-x-full"
     >
-      <nav  v-show="menuIsOpen">
+      <nav class="bg-stone-300 w-12" v-show="menuIsOpen">
         <ul>
           <li>
-            <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
+            <RouterLink to="/" class="text-zinc-800 font-semibold"> Accueil </RouterLink>
           </li>
           <li>
-            <RouterLink to="/accordeon" class="text-red-500 underline"> Accordéon </RouterLink>
+            <RouterLink to="/accordeon" class="text-zinc-800 font-semibold"> Accordéon </RouterLink>
           </li>
           <li>
-            <RouterLink to="/bouclesurdonnees" class="text-red-500 underline"> Boucle sur données </RouterLink>
+            <RouterLink to="/bouclesurdonnees" class="text-zinc-800 font-semibold"> Boucle sur données </RouterLink>
           </li>
         </ul> 
       </nav>

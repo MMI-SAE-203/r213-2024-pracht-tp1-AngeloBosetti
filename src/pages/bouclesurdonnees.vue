@@ -29,7 +29,7 @@
   ]
 </script>
 <template>
-    <section v-for="({ label, texte }, key) of sectionsData" :v-key="key">
+    <section v-for="({ label, texte }, key) of sectionsData" :key="key">
         <pre class="font-mono">key : {{ key }}</pre>
         <pre @pointerdown="sectionOpen = key" class="font-mono">label : {{ label }}</pre>
         <pre v-show="sectionOpen === key" class="font-mono">texte : {{ texte }}</pre>
