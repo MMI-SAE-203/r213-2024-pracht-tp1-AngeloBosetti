@@ -12,22 +12,22 @@ onErrorCaptured((err, instance, info) => {
 <template>
   <header>
     <button
+    @pointerdown="menuIsOpen = !menuIsOpen"
     aria-controls="mainNav"
     aria-expanded="true"
     class="rounded-full border-2 border-red-600 bg-red-300 px-2"
   >
     menu
-  </button>
-  <!-- nav#mainNav>ul>li*3>a[href="#"]{item $} -->
-  <nav id="mainNav">
+  </button >
+  <nav id="mainNav" :class="{ hidden: !menuIsOpen }">
     <ul>
-        <li>
-          <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/accordeon" class="text-red-500 underline"> Accordéon </RouterLink>
-        </li>
-      </ul>
+      <li>
+        <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/accordeon" class="text-red-500 underline"> Accordéon </RouterLink>
+      </li>
+    </ul> 
   </nav>
   </header>
   <RouterView v-slot="{ Component }">
